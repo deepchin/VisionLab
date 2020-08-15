@@ -66,7 +66,7 @@ For each batch
 	backpropogate to adjust the model weights
 
 
-### Helper method to train the data
+### Helper method to test the data
 
 For each batch
 
