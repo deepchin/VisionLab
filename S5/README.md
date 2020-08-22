@@ -116,7 +116,7 @@ Analysis:
 		
 ![Batch normalization](image/batch_norm.png)
 
-		Batch normalization reduces overfitting because it has a slight regularization effect.So we find validation accuracy has improved to 99.04% , whereas train accuracy is underfitting at 98.88%
+		Batch normalization reduces overfitting because it has a slight regularization effect.So we find validation accuracy has improved to 99.21% , whereas train accuracy is 99.43%
 
 ## Phase 3 - Include Average Pooling and Image Augmentation
 
