@@ -97,8 +97,8 @@ Model design
 Results:
 
         Parameters: 7974
-        Best Training Accuracy: 98.88
-        Best Test Accuracy: 99.04
+        Best Training Accuracy: 99.43
+        Best Test Accuracy: 99.21
     
 Analysis:
 
