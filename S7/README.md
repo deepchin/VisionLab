@@ -16,7 +16,7 @@ Residual Networks, or ResNets, learn residual functions with reference to the la
 
 Formally, denoting the desired underlying mapping as 
 
-<img src="https://render.githubusercontent.com/render/math?math={H}(x)>
+<img src="https://render.githubusercontent.com/render/math?math={H}(x)">
 
 , we let the stacked nonlinear layers fit another mapping of  $\mathcal{F}(x):=\mathcal{H}(x)-x$ . The original mapping is recast into $\mathcal{F}(x)+x$
 
