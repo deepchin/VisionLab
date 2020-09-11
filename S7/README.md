@@ -9,6 +9,25 @@
 9/11/2020 4:44:29 AM  
 
 ----------
+## Cifar 10 dataset 
+
+The CIFAR-10 dataset consists of 60000 32x32 colour images in 10 classes, with 6000 images per class. There are 50000 training images and 10000 test images.
+
+The dataset is divided into five training batches and one test batch, each with 10000 images. The test batch contains exactly 1000 randomly-selected images from each class. The training batches contain the remaining images in random order, but some training batches may contain more images from one class than another. Between them, the training batches contain exactly 5000 images from each class.
+
+Here are the classes in the dataset:
+- airplane 										
+- automobile 										
+- bird 										
+- cat 										
+- deer 										
+- dog 										
+- frog 										
+- horse 										
+- ship 										
+- truck
+
+(ref - https://www.cs.toronto.edu/~kriz/cifar.html)
 
 ## Resnet design philosophy
 
@@ -18,14 +37,36 @@ Formally, denoting the desired underlying mapping as
 
 <img src="https://render.githubusercontent.com/render/math?math={H}(x)">
 
-, we let the stacked nonlinear layers fit another mapping of  $\mathcal{F}(x):=\mathcal{H}(x)-x$ . The original mapping is recast into $\mathcal{F}(x)+x$
+, we let the stacked nonlinear layers fit another mapping of  
+
+<img src="https://render.githubusercontent.com/render/math?math={F}(x):=\mathcal{H}(x)-x">
+
+The original mapping is recast into <img src="https://render.githubusercontent.com/render/math?math={F}(x)+x">
 
 
 There is empirical evidence that these types of network are easier to optimize, and can gain accuracy from considerably increased depth.
 
 ![Residual block](images/res_block.png)
 
-<img src="https://render.githubusercontent.com/render/math?math=e^{i \pi} = -1">
+(ref -[https://paperswithcode.com/method/resnet](https://paperswithcode.com/method/resnet "resnet model") 
+
+## Modification done in the resnet model
+
+1. The first convolution layer is a dilated convolution to increase the receptive field.
+2. GAP of 8x8 matrix is used before flattening the output.  
+3. The model has four block of convolution ,
+	1. First block has Conv2d -> Batch Normalization
+	2. Second block to fourth block has 9 residual block as shown in the diagram above.
+	4. The first 2 layer of first residual block uses a depth wise separable convolution
+	(ref -  [https://towardsdatascience.com/a-basic-introduction-to-separable-convolutions-b99ec3102728](https://towardsdatascience.com/a-basic-introduction-to-separable-convolutions-b99ec3102728 "depthwise sep convolution"))
+		1. The first layer is a depthwise convolution with groups = number of input channel.
+		2. The second layer is a pointwise (1x1) convolution. 
+		
+## Performance of the resnet 56 model on CIFAR 10 dataset
+
+1. The model has 832,970 parameters
+2. **Model was run for 15 epochs , it achieved a test accuracy of 80% .**
+3. Receptive field at the last layer is 277 as shown in the calculation below
 
 ## Receptive field calculation of Resnet 56 CNN model
 
@@ -148,3 +189,12 @@ There is empirical evidence that these types of network are easier to optimize, 
 | Avg Pool        | 8           | 0       | 1      | 8             | 4       |     4    |        1       |          249          |          277          |     64     |        64        |                |
 | linear          |             |         |        |               |         |          |                |                       |                       |     64     |        10        | 650            |
 |                 |             |         |        |               |         |          |                |                       |                       |            | Total Parameters | 832970         |
+
+
+## Deployment
+
+The python notebook can be run as it is.The required libraries are imported in the notebook.
+
+Reference
+
+1- Embed latex in markdown - https://gist.github.com/a-rodin/fef3f543412d6e1ec5b6cf55bf197d7b
