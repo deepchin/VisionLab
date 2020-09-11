@@ -22,6 +22,18 @@ There is empirical evidence that these types of network are easier to optimize, 
 
 ![Residual block](images/res_block.png)
 
+$\pi r^2$ or $e^{i\pi}$.
+
+\documentclass[a4paper,12pt]{article}
+\usepackage{amsmath,amssymb}
+\begin{document}
+\[
+BP(\mathcal{D}_{i}\mathcal{D}_{j})=\begin{cases}
+\mathcal{B}_{i}\cdot \mathcal{B}_{j} & \mathcal{C}_{i}=\mathcal{C}_{j}\\
+0 & \mathcal{C}_{i}\neq \mathcal{C}_{j}
+\end{cases}
+\]
+\end{document}
 
 ## Receptive field calculation of Resnet 56 CNN model
 
