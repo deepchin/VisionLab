@@ -53,7 +53,8 @@ There is empirical evidence that these types of network are easier to optimize, 
 ## Modification done in the resnet model
 
 1. The first convolution layer is a dilated convolution to increase the receptive field.
-2. GAP of 8x8 matrix is used before flattening the output.  
+2. GAP of 8x8 matrix is used before flattening the output. 
+3. StepLR is used to vary the learning rate. 
 3. The model has four block of convolution ,
 	1. First block has Conv2d -> Batch Normalization
 	2. Second block to fourth block has 9 residual block as shown in the diagram above.
