@@ -14,7 +14,9 @@
 
 Residual Networks, or ResNets, learn residual functions with reference to the layer inputs, instead of learning unreferenced functions. Instead of hoping each few stacked layers directly fit a desired underlying mapping, residual nets let these layers fit a residual mapping. They stack residual blocks ontop of each other to form network: e.g. a ResNet-50 has fifty layers using these blocks.
 
-Formally, denoting the desired underlying mapping as $\mathcal{H}(x)$
+Formally, denoting the desired underlying mapping as 
+
+$\mathcal{H}(x)$
 , we let the stacked nonlinear layers fit another mapping of  $\mathcal{F}(x):=\mathcal{H}(x)-x$ . The original mapping is recast into $\mathcal{F}(x)+x$
 
 
@@ -22,6 +24,7 @@ There is empirical evidence that these types of network are easier to optimize, 
 
 ![Residual block](images/res_block.png)
 
+<img src="https://render.githubusercontent.com/render/math?math=e^{i \pi} = -1">
 
 ## Receptive field calculation of Resnet 56 CNN model
 
