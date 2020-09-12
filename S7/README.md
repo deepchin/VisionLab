@@ -9,6 +9,14 @@
 9/11/2020 4:44:29 AM  
 
 ----------
+
+## Source code for model , train , test and loaddata
+
+Source code for the above modules are in git package
+
+1.  https://github.com/tfdeepnet/visionlib/tree/master/utils
+2.  https://github.com/tfdeepnet/visionlib/tree/master/models
+
 ## Cifar 10 dataset 
 
 The CIFAR-10 dataset consists of 60000 32x32 colour images in 10 classes, with 6000 images per class. There are 50000 training images and 10000 test images.
