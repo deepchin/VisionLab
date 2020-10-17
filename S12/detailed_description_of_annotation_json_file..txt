@@ -1,0 +1,58 @@
+The annotation json file has 5 top level objects
+
+Object 1 :"_via_settings"
+-------------------------
+
+Important information stored in this section is project name.
+
+"_via_settings":{"ui":{"annotation_editor_height":25,"annotation_editor_fontsize":0.8,"leftsidebar_width":18,"image_grid":{"img_height":80,"rshape_fill":"none","rshape_fill_opacity":0.3,"rshape_stroke":"yellow","rshape_stroke_width":2,"show_region_shape":true,"show_image_policy":"all"},"image":{"region_label":"__via_region_id__","region_color":"__via_default_region_color__","region_label_font":"10px Sans","on_image_annotation_editor_placement":"NEAR_REGION"}},"core":{"buffer_size":18,"filepath":{},"default_filepath":""},"project":{"name":"S12_assignment"}
+
+Object 2 :"_via_img_metadata"
+------------------------------
+
+
+This object stores the most important information about the annotated images
+"_via_img_metadata":
+{
+"img_1.jpg11814": -- Image identifier
+	{"filename":"img_1.jpg",   -- actual image file name 
+	"size":11814, -- size of the image in bytes
+	"regions":  -- bounding box information
+		[{"shape_attributes": -- shape of bounding box
+			{"name":"rect", -- name of the bounding box
+			"x":33, --x co-ordinate of the origin of bounding box w.r.t image origin
+			"y":131, --y co-ordinate of the origin of bounding box w.r.t image origin
+			"width":43,  -- width of the bounding box
+			"height":62}, -- height of bounding box
+		"region_attributes":  -- class information of bounding box
+			{"":"boot1",
+			"dropdown":"boot"}  -- The region attribute is configured as a dropdown , it holds 4 values - hard helmet , mask , vest and boot
+		},
+		{"shape_attributes":
+			{"name":"rect",
+			"x":156,
+			"y":127,
+			"width":49,
+			"height":64},
+		"region_attributes":
+			{"":"boot2",
+			"dropdown":"boot"}
+		}],
+	
+	"file_attributes":{}
+	}
+}
+
+Object 3 - "_via_attributes"
+------------------------------
+
+This object stores information about region attributes , in this case it is configured as a dropdown and the list of values are :  
+"boot","helmet","mask","vest"
+
+"_via_attributes":{"region":{"":{"type":"text","description":"","default_value":""},"dropdown":{"type":"dropdown","description":"","options":{"boot":"","helmet":"","mask":"","vest":""},"default_options":{}}},"file":{}},
+
+Object 4 - "_via_image_id_list"
+------------------------------
+This object stores the list of image files 
+
+"_via_image_id_list":["img_1.jpg11814","img_2.jpg6976","img_3.jpg9637","img_4.jpg5950", ..]
