@@ -47,6 +47,8 @@ The trained model was tested on random images to detect the four classes mention
 
 [Object detection video](https://github.com/deepchin/VisionLab/blob/master/S13/S13_Yolo_video.mp4 "Object detection video ")
 
+[You tube Object detection video](https://youtu.be/KY3u723XVws "Object detection video")
+
 
 ## Training log
 
